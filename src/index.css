@@ -1,0 +1,169 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.product-details {
+  position: relative;
+  display: block;
+  padding: 70px 0px 56px;
+}
+
+.product-details__img {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.product-details__img img {
+  width: 100%;
+  border-radius: var(--oxpins-bdr-radius);
+}
+
+.product-details__top {
+  position: relative;
+  display: block;
+  margin-top: -8px;
+}
+
+.product-details__title {
+  font-size: 34px;
+  line-height: 44px;
+  font-weight: 900;
+  margin: 0;
+  letter-spacing: -0.04em;
+}
+
+.product-details__title span {
+  position: relative;
+  display: inline-block;
+  color: var(--oxpins-base);
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 900;
+  margin-left: 32px;
+  letter-spacing: 0;
+}
+
+.product-details__reveiw {
+  display: flex;
+  align-items: center;
+  margin-top: 19px;
+  padding-bottom: 30px;
+  margin-bottom: 21px;
+}
+
+.product-details__reveiw i {
+  font-size: 16px;
+  color: #ffa114;
+}
+
+.product-details__reveiw i + i {
+  margin-left: 4px;
+}
+
+.product-details__reveiw span {
+  position: relative;
+  top: 1px;
+  line-height: 1;
+  font-size: 16px;
+  margin-left: 20px;
+}
+
+.product-details__content {
+  position: relative;
+  display: block;
+}
+
+.product-details__content-text1 {
+  font-size: 16px;
+  line-height: 30px;
+  margin: 0;
+  margin-bottom: 31px;
+}
+
+.product-details__content-text2 {
+  font-size: 16px;
+  line-height: 30px;
+  margin: 0;
+}
+
+.product-details__quantity {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 21px;
+}
+
+.product-details__quantity-title {
+  margin: 0;
+  color: var(--oxpins-black);
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: 900;
+  margin-right: 30px;
+}
+
+.product-details__quantity .quantity-box {
+  position: relative;
+  width: 98px;
+  border-radius: var(--oxpins-bdr-radius);
+  height: 50px;
+}
+
+.product-details__quantity .quantity-box input {
+  width: 98px;
+  border-radius: var(--oxpins-bdr-radius);
+  height: 50px;
+  border: 1px solid var(--oxpins-bdr-color);
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+  font-family: var(--oxpins-font);
+  padding-left: 30px;
+  outline: none;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--oxpins-gray);
+  background-color: transparent;
+}
+
+.product-details__quantity .quantity-box button {
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  color: var(--oxpins-gray);
+  font-size: 8px;
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  background-color: transparent;
+  border: none;
+  border-left: 1px solid var(--oxpins-bdr-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+}
+
+.product-details__quantity .quantity-box button.sub {
+  bottom: 1px;
+  top: auto;
+  border-top: 1px solid var(--oxpins-bdr-color);
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.color-btn {
+  display: flex;
+  gap: 10px;
+}

@@ -1,0 +1,20 @@
+.product_btn {
+  background-color: white !important;
+
+  font-size: 16px !important;
+  font-weight: 800 !important;
+  color: black !important;
+  border: none !important;
+  border-radius: 20px !important;
+  padding: 5px 10px !important;
+  border: 1px solid black !important;
+}
+
+.product_btn:hover {
+  background-color: #ffa114 !important;
+  border: none;
+}
+
+.reviews {
+  color: #ffa114;
+}
