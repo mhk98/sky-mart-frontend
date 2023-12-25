@@ -6,10 +6,6 @@ import {
 } from "../../features/cart/cart";
 import "./Cart.css";
 const Cart = () => {
-  // const router = useRouter();
-  // const userLoggedIn = isLoggedIn();
-  // console.log("userLoggedIn", userLoggedIn);
-
   const { data, isLoading, isError, error } = useGetAllCartQuery();
   const [cart, setCart] = useState([]);
 
@@ -36,28 +32,7 @@ const Cart = () => {
         return item;
       })
     );
-
-    // Recalculate and update the subtotal, discount, and total
-    const updatedSubtotal = calculateTotal();
-
-    const updatedDiscount = appliedDiscount; // You might need to recalculate the discount based on the updated cart.
-    const updatedTotal = updatedSubtotal - updatedDiscount;
-    setCartTotal(updatedTotal);
-
-    // Update the local storage with the new cart data after changing the state
-    const updatedCart = JSON.stringify(cart);
-    localStorage.setItem("cart", updatedCart);
   };
-
-  // Function to calculate the subtotal of an item
-  const calculateSubtotal = (price, quantity) => price * quantity;
-
-  // Function to calculate the total cart price
-  const calculateTotal = () =>
-    cart.reduce(
-      (total, item) => total + calculateSubtotal(item.price, item.quantity),
-      0
-    );
 
   const [deleteCart] = useDeleteCartMutation();
   const handleDelete = async (id) => {
@@ -67,83 +42,10 @@ const Cart = () => {
 
         console.log("productId", id);
         const res = await deleteCart(id);
-
-        // const updatedCart = cart.filter((item) => item.Cart_Id !== id);
-        // setCart(updatedCart);
-
-        // // Recalculate and update the subtotal, discount, and total
-        // const updatedSubtotal = calculateTotal();
-        // const updatedDiscount = appliedDiscount; // You might need to recalculate the discount based on the updated cart.
-        // const updatedTotal = updatedSubtotal - updatedDiscount;
-        // setCartTotal(updatedTotal);
-
-        // // Update the local storage with the new cart data after removing the item
-        // const updatedCartJSON = JSON.stringify(updatedCart);
-        // localStorage.setItem("cart", updatedCartJSON);
       }
     }
   };
 
-  const [couponCode, setCouponCode] = useState("");
-  const [appliedDiscount, setAppliedDiscount] = useState(0);
-  const [cartTotal, setCartTotal] = useState(calculateTotal());
-
-  // Function to handle changes in the coupon code input field
-  const handleCouponCodeChange = (e) => {
-    setCouponCode(e.target.value);
-  };
-
-  // Function to apply the coupon and calculate the discount
-  // const applyCoupon = () => {
-  //   // You can add logic here to validate the coupon code and calculate the discount.
-  //   // For this example, we'll apply a fixed 20% discount if the coupon is "OCT".
-
-  //   if (couponCode === "OCT20") {
-  //     const totalBeforeDiscount = calculateTotal();
-  //     const discount = (totalBeforeDiscount * 20) / 100; // 20% discount
-  //     const discountedTotal = totalBeforeDiscount - discount;
-
-  //     setAppliedDiscount(discount);
-  //     setCartTotal(discountedTotal);
-  //   }
-  // };
-
-  // const handleProceedToCheckout = () => {
-  //   // Calculate the subtotal and total one more time
-  //   const subtotal = calculateTotal();
-  //   const total = subtotal - appliedDiscount;
-
-  //   // Store the values in localStorage
-  //   localStorage.setItem("subtotal", subtotal.toFixed(2));
-  //   localStorage.setItem("total", total.toFixed(2));
-
-  //   // router.push("/dark/shop-checkout/", { scroll: false });
-  // };
-
-  // const handleAlertCheckout = () => {
-  //   const confirmed = window.confirm(
-  //     "Please login first. Do you want to go to the login page?"
-  //   );
-
-  //   if (confirmed) {
-  //     router.push("/dark/login");
-  //   }
-  // };
-  // const [createOrder] = useCreateOrderMutation();
-  // const handleCreateOrder = async () => {
-  //   const subtotal = calculateTotal();
-  //   const total = subtotal - appliedDiscount;
-  //   const data = {
-  //     orderDetails: cart,
-  //     subtotal: subtotal.toFixed(2),
-  //     total: total.toFixed(2),
-  //   };
-  //   const res = await createOrder(data);
-  //   if (res) {
-  //     toast.success("Now you are ready for proceed checkout");
-  //     router.push("/dark/shop-checkout");
-  //   }
-  // };
   return (
     <div>
       <div className="container">
